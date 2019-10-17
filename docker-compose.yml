@@ -1,0 +1,29 @@
+version: "3"
+services:
+
+  master:
+    image: "ros:melodic-ros-core-bionic"
+    container_name: "multi_ros_master"
+    hostname: master
+    command: tail -F anything
+    networks:
+      - multi_ros_network
+
+  subscriber:
+    image: "ros:melodic-ros-core-bionic"
+    container_name: "multi_ros_subscriber"
+    hostname: subscriber
+    command: tail -F anything
+    networks:
+      - multi_ros_network
+    
+  publisher:
+    image: "ros:melodic-ros-core-bionic"
+    container_name: "multi_ros_publisher"
+    hostname: publisher
+    command: tail -F anything
+    networks:
+      - multi_ros_network
+
+networks:
+  multi_ros_network:

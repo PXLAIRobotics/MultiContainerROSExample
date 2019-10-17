@@ -5,7 +5,7 @@ services:
     image: "ros:melodic-ros-core-bionic"
     container_name: "multi_ros_master"
     hostname: master
-    command: tail -F anything
+    command: tail -f /dev/null
     networks:
       - multi_ros_network
 
@@ -13,7 +13,7 @@ services:
     image: "ros:melodic-ros-core-bionic"
     container_name: "multi_ros_subscriber"
     hostname: subscriber
-    command: tail -F anything
+    command: tail -f /dev/null
     networks:
       - multi_ros_network
     
@@ -21,7 +21,7 @@ services:
     image: "ros:melodic-ros-core-bionic"
     container_name: "multi_ros_publisher"
     hostname: publisher
-    command: tail -F anything
+    command: tail -f /dev/null
     networks:
       - multi_ros_network
 
